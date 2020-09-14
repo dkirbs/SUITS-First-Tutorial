@@ -57,7 +57,8 @@ public class CameraControl : MonoBehaviour
         // Mouse control
         if (Input.GetMouseButtonDown(0)) // Left click
         {
-            // Add stuff here
+            Vector3 p = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f));
+            Instantiate(ballPrefab, new Vector3(p.x, p.y, p.z), Quaternion.identity);
         }
     }
 }
